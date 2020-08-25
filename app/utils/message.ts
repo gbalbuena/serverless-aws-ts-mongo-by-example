@@ -1,7 +1,11 @@
+import httpStatus from 'http-status';
 import { ResponseVO } from '../model/vo/ResponseVo';
 
 enum StatusCode {
-  success = 200,
+  success = httpStatus.OK,
+  created = httpStatus.CREATED,
+  updated = httpStatus.NO_CONTENT,
+  deleted = httpStatus.NO_CONTENT,
 }
 
 class Result {
@@ -35,14 +39,26 @@ class Result {
 export class MessageUtil {
   static success(data: object): ResponseVO {
     const result = new Result(StatusCode.success, 0, 'success', data);
+    return result.bodyToString();
+  }
 
+  static created(data: object): ResponseVO {
+    const result = new Result(StatusCode.created, 0, 'created', data);
+    return result.bodyToString();
+  }
+
+  static updated(data: object): ResponseVO {
+    const result = new Result(StatusCode.updated, 0, 'updated', data);
+    return result.bodyToString();
+  }
+
+  static deleted(data: object): ResponseVO {
+    const result = new Result(StatusCode.deleted, 0, 'updated', data);
     return result.bodyToString();
   }
 
   static error(code: number = 1000, message: string) {
     const result = new Result(StatusCode.success, code, message);
-
-    console.log(result.bodyToString());
     return result.bodyToString();
   }
 }

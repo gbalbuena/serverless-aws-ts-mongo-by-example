@@ -1,5 +1,6 @@
 import { Model } from 'mongoose';
 import { CreateBookDTO } from '../model/dto/createBookDTO';
+import logger from '../utils/logger';
 
 export class BooksService {
   private books: Model<any>;
@@ -20,7 +21,7 @@ export class BooksService {
 
       return result;
     } catch (err) {
-      console.error(err);
+      logger.error('Something went wrong', err);
 
       throw err;
     }

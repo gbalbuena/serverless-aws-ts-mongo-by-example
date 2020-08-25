@@ -16,7 +16,9 @@
   ],
   "dependencies": {
     "dotenv": "^8.2.0",
-    "mongoose": "^5.9.10"
+    "http-status": "^1.4.2",
+    "mongoose": "^5.9.10",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.51",

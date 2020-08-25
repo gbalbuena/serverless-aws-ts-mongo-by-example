@@ -3,6 +3,8 @@ import { Model } from 'mongoose';
 import { MessageUtil } from '../utils/message';
 import { BooksService } from '../service/books';
 import { CreateBookDTO } from '../model/dto/createBookDTO';
+import logger from '../utils/logger';
+import { ResponseVO } from '../model/vo/ResponseVo';
 
 export class BooksController extends BooksService {
   constructor (books: Model<any>) {
@@ -13,8 +15,8 @@ export class BooksController extends BooksService {
    * Create book
    * @param {*} event
    */
-  async create (event: any, context?: Context) {
-    console.log('functionName', context.functionName);
+  async create (event: any, context?: Context): Promise<ResponseVO> {
+    logger.info('functionName', { functionName: context.functionName });
     const params: CreateBookDTO = JSON.parse(event.body);
 
     try {
@@ -23,9 +25,9 @@ export class BooksController extends BooksService {
         id: params.id,
       });
 
-      return MessageUtil.success(result);
+      return MessageUtil.created(result);
     } catch (err) {
-      console.error(err);
+      logger.error('Something went wrong', err);
 
       return MessageUtil.error(err.code, err.message);
     }
@@ -35,15 +37,15 @@ export class BooksController extends BooksService {
    * Update a book by id
    * @param event
    */
-  async update (event: any) {
+  async update (event: any): Promise<ResponseVO> {
     const id: number = Number(event.pathParameters.id);
     const body: object = JSON.parse(event.body);
 
     try {
       const result = await this.updateBooks(id, body);
-      return MessageUtil.success(result);
+      return MessageUtil.updated(result);
     } catch (err) {
-      console.error(err);
+      logger.error('Something went wrong', err);
 
       return MessageUtil.error(err.code, err.message);
     }
@@ -58,7 +60,7 @@ export class BooksController extends BooksService {
 
       return MessageUtil.success(result);
     } catch (err) {
-      console.error(err);
+      logger.error('Something went wrong', err);
 
       return MessageUtil.error(err.code, err.message);
     }
@@ -70,7 +72,7 @@ export class BooksController extends BooksService {
    */
   async findOne (event: any, context: Context) {
     // The amount of memory allocated for the function
-    console.log('memoryLimitInMB: ', context.memoryLimitInMB);
+    logger.info('memoryLimitInMB: ', context.memoryLimitInMB);
 
     const id: number = Number(event.pathParameters.id);
 
@@ -79,7 +81,7 @@ export class BooksController extends BooksService {
 
       return MessageUtil.success(result);
     } catch (err) {
-      console.error(err);
+      logger.error('Something went wrong', err);
 
       return MessageUtil.error(err.code, err.message);
     }
@@ -101,7 +103,7 @@ export class BooksController extends BooksService {
 
       return MessageUtil.success(result);
     } catch (err) {
-      console.error(err);
+      logger.error('Something went wrong', err);
 
       return MessageUtil.error(err.code, err.message);
     }
