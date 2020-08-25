@@ -14,6 +14,13 @@ authorAvatar: 'https://avatars0.githubusercontent.com/u/17956058?s=460&u=f3aceba
 
 This is simple REST API example for AWS Lambda By Serverless framwork with TypeScript and MongoDB Atlas.
 
+## Clone This Example
+
+```
+Step #1 - npm install serverless -g
+Step #2 - serverless install -u https://github.com/serverless/examples/tree/master/aws-node-rest-api-typescript -n  aws-node-rest-api-typescript
+```
+
 ## Use Cases
 
 * REST API with typescript

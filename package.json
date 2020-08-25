@@ -4,11 +4,12 @@
   "description": "This is simple REST API example for AWS Lambda By Serverless framwork with TypeScript and MongoDB Atlas.",
   "main": "index.js",
   "scripts": {
-    "lint": "tslint -p tsconfig.json -c tslint.json",
-    "local": "serverless offline",
-    "deploy": "serverless deploy",
+    "build": "npx serverless package",
+    "coverage": "nyc --reporter lcov npm run test",
+    "deploy": "npx serverless deploy",
+    "local": "npx serverless offline",
     "test": "cross-env NODE_ENV=dev mocha -r ts-node/register tests/*.test.ts --exit",
-    "coverage": "nyc --reporter lcov npm run test"
+    "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "pre-commit": [
     "lint"
