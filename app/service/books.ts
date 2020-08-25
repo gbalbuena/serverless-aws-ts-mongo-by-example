@@ -15,6 +15,7 @@ export class BooksService {
   protected async createBook (params: CreateBookDTO): Promise<object> {
     try {
       const result = await this.books.create({
+        description: params.description,
         name: params.name,
         id: params.id,
       });

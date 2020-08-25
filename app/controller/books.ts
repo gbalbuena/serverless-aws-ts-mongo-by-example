@@ -21,6 +21,7 @@ export class BooksController extends BooksService {
 
     try {
       const result = await this.createBook({
+        description: params.description,
         name: params.name,
         id: params.id,
       });

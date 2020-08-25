@@ -7,7 +7,7 @@
     "build": "npx serverless package",
     "coverage": "nyc --reporter lcov npm run test",
     "deploy": "npx serverless deploy",
-    "local": "npx serverless offline",
+    "local": "rm -rf .build && npx serverless offline",
     "test": "cross-env NODE_ENV=dev mocha -r ts-node/register tests/*.test.ts --exit",
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },
@@ -17,7 +17,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "http-status": "^1.4.2",
-    "mongoose": "^5.9.10",
+    "mongoose": "^5.10.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {

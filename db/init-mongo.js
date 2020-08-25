@@ -1,12 +1,12 @@
-// db.createUser(
-//   {
-//     user: 'mongo',
-//     pwd: 'mongo',
-//     roles: [
-//       {
-//         role: 'readWrite',
-//         db: 'db'
-//       }
-//     ]
-//   }
-// )
+db.createUser(
+  {
+    user: 'mongodb',
+    pwd: 'mongodb',
+    roles: [
+      {
+        role: 'readWrite',
+        db: 'study'
+      }
+    ]
+  }
+)
