@@ -15,3 +15,5 @@ out-logger.json
 
 db/*
 !db/init-mongo.js
+
+*.log
