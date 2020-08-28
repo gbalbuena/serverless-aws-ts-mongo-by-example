@@ -22,7 +22,7 @@ describe('Books', () => {
         return lambdaTester(findOne)
         .event({ pathParameters: { id: 25768396 } })
         .expectResult((result: any) => {
-          expect(result.statusCode).to.equal(200);
+          expect(result.statusCode).to.equal(httpStatus.OK);
           const body = JSON.parse(result.body);
           expect(body.code).to.equal(0);
           s.verify();
@@ -44,7 +44,7 @@ describe('Books', () => {
         return lambdaTester(findOne)
         .event({ pathParameters: { id: 25768396 } })
         .expectResult((result: any) => {
-          expect(result.statusCode).to.equal(200);
+          expect(result.statusCode).to.equal(httpStatus.OK);
           const body = JSON.parse(result.body);
           expect(body.code).to.equal(1000);
           s.restore();
@@ -66,7 +66,7 @@ describe('Books', () => {
       return lambdaTester(find)
       .event({})
       .expectResult((result: any) => {
-        expect(result.statusCode).to.equal(200);
+        expect(result.statusCode).to.equal(httpStatus.OK);
         const body = JSON.parse(result.body);
         expect(body.code).to.equal(0);
         s.restore();
@@ -162,7 +162,7 @@ describe('Books', () => {
           description: '阅读《Node.js：来一打 C++ 扩展》，相当于同时学习Chrome V8 开发、libuv 开发以及 Node.js 的原生 C++ 扩展开发知识，非常值得！',
         })})
         .expectResult((result: any) => {
-          expect(result.statusCode).to.equal(200);
+          expect(result.statusCode).to.equal(httpStatus.OK);
           const body = JSON.parse(result.body);
           expect(body.code).to.equal(1000);
           s.restore();
@@ -180,7 +180,7 @@ describe('Books', () => {
       return lambdaTester(deleteOne)
         .event({  pathParameters: { id: 30247892 } })
         .expectResult((result: any) => {
-          expect(result.statusCode).to.equal(200);
+          expect(result.statusCode).to.equal(204);
           const body = JSON.parse(result.body);
           expect(body.code).to.equal(0);
           s.restore();
@@ -196,7 +196,7 @@ describe('Books', () => {
       return lambdaTester(deleteOne)
         .event({ pathParameters: { id: 30247892 } })
         .expectResult((result: any) => {
-          expect(result.statusCode).to.equal(200);
+          expect(result.statusCode).to.equal(httpStatus.OK);
           const body = JSON.parse(result.body);
           expect(body.code).to.equal(1010);
           s.restore();
@@ -212,7 +212,7 @@ describe('Books', () => {
       return lambdaTester(deleteOne)
         .event({ pathParameters: { id: '30247892_' } })
         .expectResult((result: any) => {
-          expect(result.statusCode).to.equal(200);
+          expect(result.statusCode).to.equal(httpStatus.OK);
           const body = JSON.parse(result.body);
           expect(body.code).to.equal(1000);
           s.restore();

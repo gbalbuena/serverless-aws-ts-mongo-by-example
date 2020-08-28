@@ -45,7 +45,7 @@ export class BooksService {
    * Find books
    */
   protected findBooks () {
-    return this.books.find();
+    return this.books.find({});
   }
 
   /**

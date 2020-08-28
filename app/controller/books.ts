@@ -102,7 +102,7 @@ export class BooksController extends BooksService {
         return MessageUtil.error(1010, 'The data was not found! May have been deleted!');
       }
 
-      return MessageUtil.success(result);
+      return MessageUtil.deleted(result);
     } catch (err) {
       logger.error('Something went wrong', err);
 
