@@ -6,6 +6,7 @@
 		"app/model/dto/**.ts", 
 		"app/model/vo/**.ts",
 		"coverage",
-		"tests"
+    "db",
+    "tests"
 	]
 }
