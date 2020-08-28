@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "npx serverless package",
-    "coverage": "nyc --reporter lcov npm run test",
+    "coverage": "npx nyc --reporter lcov npm run test",
     "deploy": "npx serverless deploy",
     "local": "rm -rf .build && npx serverless offline",
-    "test": "cross-env NODE_ENV=dev mocha -r ts-node/register tests/*.test.ts --exit",
-    "lint": "tslint -p tsconfig.json -c tslint.json"
+    "test": "cross-env NODE_ENV=dev npx mocha -r ts-node/register tests/*.test.ts --exit",
+    "lint": "npx tslint -p tsconfig.json -c tslint.json"
   },
   "pre-commit": [
     "lint"
