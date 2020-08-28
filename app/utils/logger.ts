@@ -16,11 +16,7 @@ const logger = createLogger({
   ]
 })
 
-logger.info('Logger initialized...', {
-  env: process.env.NODE_ENV
-});
-
-if (process.env['NODE_ENV'] == 'dev') {
+if (process.env['NODE_ENV'] == 'dev' && typeof global.it === 'function') {
   const files = new transports.File({ filename: 'combined.log' });
   logger.clear().add(files);
 }
