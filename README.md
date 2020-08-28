@@ -1,15 +1,3 @@
-<!--
-title: 'Serverless Nodejs Rest API with TypeScript And MongoDB Atlas'
-description: 'This is simple REST API example for AWS Lambda By Serverless framwork with TypeScript and MongoDB Atlas.'
-layout: Doc
-framework: v1
-platform: AWS
-language: nodeJS
-authorLink: 'https://github.com/Q-Angelo'
-authorName: 'May Jun'
-authorAvatar: 'https://avatars0.githubusercontent.com/u/17956058?s=460&u=f3acebabd097e6e93d5be5a8366b980fea5b15aa&v=4'
--->
-
 # Serverless Nodejs Rest API with TypeScript And MongoDB Atlas
 
 This is simple REST API example for AWS Lambda By Serverless framwork with TypeScript and MongoDB Atlas.
@@ -18,8 +6,10 @@ This is simple REST API example for AWS Lambda By Serverless framwork with TypeS
 
 ```
 Step #1 - npm install serverless -g
-Step #2 - serverless install -u https://github.com/serverless/examples/tree/master/aws-node-rest-api-typescript -n  aws-node-rest-api-typescript
+Step #2 - serverless install -u https://github.com/gbalbuena/serverless-aws-ts-mongo-by-example/tree/master -n  aws-node-rest-api-typescript
 ```
+
+Initial taken from `https://github.com/serverless/examples/aws-node-rest-api-typescript`
 
 ## Use Cases
 
@@ -47,6 +37,11 @@ Serverless: Typescript compiled.
     "body": "{\"code\":0,\"message\":\"success\",\"data\":[{\"_id\":\"5dff21f71c9d440000a30dad\",\"createdAt\":\"2020-05-16T09:27:51.219Z\"},{\"_id\":\"5dff22ba1c9d440000a30dae\",\"createdAt\":\"2020-05-16T09:27:51.220Z\"}]}"
 }
 ```
+
+## Test and coverage
+
+* Run ```npm run test``` to execute all the tests
+* Run ```npm run coverage``` to execute coverage report
 
 ## Deploy
 
