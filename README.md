@@ -9,7 +9,7 @@ Step #1 - npm install serverless -g
 Step #2 - serverless install -u https://github.com/gbalbuena/serverless-aws-ts-mongo-by-example/tree/master -n  aws-node-rest-api-typescript
 ```
 
-Initial taken from `https://github.com/serverless/examples/aws-node-rest-api-typescript`
+Inspired by `https://github.com/serverless/examples/aws-node-rest-api-typescript`
 
 ## Use Cases
 
