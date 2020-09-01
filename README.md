@@ -2,6 +2,17 @@
 
 This is simple REST API example for AWS Lambda By Serverless framwork with TypeScript and MongoDB Atlas.
 
+## Getting started
+
+``` 
+git clone git@github.com:gbalbuena/serverless-aws-ts-mongo-by-example.git
+
+docker-compose up
+
+npm ci
+npm run local
+```
+
 ## Clone This Example
 
 ```
